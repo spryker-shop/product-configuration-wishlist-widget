@@ -18,19 +18,11 @@ class WishlistPageApplicabilityChecker implements WishlistPageApplicabilityCheck
      */
     protected $productConfigurationWishlistWidgetConfig;
 
-    /**
-     * @param \SprykerShop\Yves\ProductConfigurationWishlistWidget\ProductConfigurationWishlistWidgetConfig $productConfigurationWishlistWidgetConfig
-     */
     public function __construct(ProductConfigurationWishlistWidgetConfig $productConfigurationWishlistWidgetConfig)
     {
         $this->productConfigurationWishlistWidgetConfig = $productConfigurationWishlistWidgetConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfiguratorRequestTransfer $productConfiguratorRequestTransfer
-     *
-     * @return bool
-     */
     public function isRequestApplicable(ProductConfiguratorRequestTransfer $productConfiguratorRequestTransfer): bool
     {
         $isConfiguratorKeySupported = $this->isConfiguratorKeySupported(
@@ -41,11 +33,6 @@ class WishlistPageApplicabilityChecker implements WishlistPageApplicabilityCheck
             === $this->productConfigurationWishlistWidgetConfig->getWishlistSourceType();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfiguratorResponseTransfer $productConfiguratorResponseTransfer
-     *
-     * @return bool
-     */
     public function isResponseApplicable(ProductConfiguratorResponseTransfer $productConfiguratorResponseTransfer): bool
     {
         $isConfiguratorKeySupported = $this->isConfiguratorKeySupported(
@@ -56,11 +43,6 @@ class WishlistPageApplicabilityChecker implements WishlistPageApplicabilityCheck
             === $this->productConfigurationWishlistWidgetConfig->getWishlistSourceType();
     }
 
-    /**
-     * @param string $configuratorKey
-     *
-     * @return bool
-     */
     protected function isConfiguratorKeySupported(string $configuratorKey): bool
     {
         return in_array(

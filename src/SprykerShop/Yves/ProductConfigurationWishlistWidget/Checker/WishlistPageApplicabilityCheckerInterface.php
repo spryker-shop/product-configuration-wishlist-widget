@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\ProductConfiguratorResponseTransfer;
 
 interface WishlistPageApplicabilityCheckerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfiguratorRequestTransfer $productConfiguratorRequestTransfer
-     *
-     * @return bool
-     */
     public function isRequestApplicable(ProductConfiguratorRequestTransfer $productConfiguratorRequestTransfer): bool;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfiguratorResponseTransfer $productConfiguratorResponseTransfer
-     *
-     * @return bool
-     */
     public function isResponseApplicable(ProductConfiguratorResponseTransfer $productConfiguratorResponseTransfer): bool;
 }

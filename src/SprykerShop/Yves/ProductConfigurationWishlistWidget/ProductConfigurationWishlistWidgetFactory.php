@@ -29,9 +29,6 @@ use Symfony\Component\Form\FormInterface;
  */
 class ProductConfigurationWishlistWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\ProductConfigurationWishlistWidget\Resolver\ProductConfigurationTemplateResolverInterface
-     */
     public function createProductConfigurationTemplateResolver(): ProductConfigurationTemplateResolverInterface
     {
         return new ProductConfigurationTemplateResolver(
@@ -39,9 +36,6 @@ class ProductConfigurationWishlistWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function getProductConfigurationButtonForm(): FormInterface
     {
         return $this->getFormFactory()->createNamed(
@@ -50,9 +44,6 @@ class ProductConfigurationWishlistWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductConfigurationWishlistWidget\Checker\WishlistPageApplicabilityCheckerInterface
-     */
     public function createWishlistPageApplicabilityChecker(): WishlistPageApplicabilityCheckerInterface
     {
         return new WishlistPageApplicabilityChecker(
@@ -60,17 +51,11 @@ class ProductConfigurationWishlistWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductConfigurationWishlistWidget\Form\DataProvider\ProductConfiguratorButtonFormDataProvider
-     */
     public function createProductConfiguratorButtonFormDataProvider(): ProductConfiguratorButtonFormDataProvider
     {
         return new ProductConfiguratorButtonFormDataProvider($this->getConfig());
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductConfigurationWishlistWidget\Processor\ProductConfiguratorResponseProcessorInterface
-     */
     public function createProductConfiguratorResponseProcessor(): ProductConfiguratorResponseProcessorInterface
     {
         return new ProductConfiguratorResponseProcessor(
@@ -79,17 +64,11 @@ class ProductConfigurationWishlistWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormFactoryInterface
-     */
     public function getFormFactory(): FormFactoryInterface
     {
         return $this->getProvidedDependency(ApplicationConstants::FORM_FACTORY);
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductConfigurationWishlistWidget\Expander\WishlistPageProductConfiguratorRequestDataFormExpanderInterface
-     */
     public function createWishlistPageProductConfiguratorRequestDataFormExpander(): WishlistPageProductConfiguratorRequestDataFormExpanderInterface
     {
         return new WishlistPageProductConfiguratorRequestDataFormExpander(
@@ -97,9 +76,6 @@ class ProductConfigurationWishlistWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductConfigurationWishlistWidget\Dependency\Client\ProductConfigurationWishlistWidgetToProductConfigurationWishlistClientInterface
-     */
     public function getProductConfigurationWishlistClient(): ProductConfigurationWishlistWidgetToProductConfigurationWishlistClientInterface
     {
         return $this->getProvidedDependency(ProductConfigurationWishlistWidgetDependencyProvider::CLIENT_PRODUCT_CONFIGURATION_WISHLIST);
@@ -113,9 +89,6 @@ class ProductConfigurationWishlistWidgetFactory extends AbstractFactory
         return $this->getProvidedDependency(ProductConfigurationWishlistWidgetDependencyProvider::PLUGINS_WISHLIST_ITEM_PRODUCT_CONFIGURATION_RENDER_STRATEGY);
     }
 
-    /**
-     * @return \Symfony\Cmf\Component\Routing\ChainRouterInterface
-     */
     public function getRouter(): ChainRouterInterface
     {
         return $this->getProvidedDependency(ProductConfigurationWishlistWidgetDependencyProvider::SERVICE_ROUTER);

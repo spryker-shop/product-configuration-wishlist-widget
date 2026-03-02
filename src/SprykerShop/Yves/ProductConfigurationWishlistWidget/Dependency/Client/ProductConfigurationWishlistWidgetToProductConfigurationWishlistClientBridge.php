@@ -39,11 +39,6 @@ class ProductConfigurationWishlistWidgetToProductConfigurationWishlistClientBrid
         return $this->productConfigurationWishlistClient->expandWithProductConfiguration($wishlistItemTransfer, $params);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfiguratorRequestTransfer $productConfiguratorRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfiguratorRedirectTransfer
-     */
     public function resolveProductConfiguratorAccessTokenRedirect(
         ProductConfiguratorRequestTransfer $productConfiguratorRequestTransfer
     ): ProductConfiguratorRedirectTransfer {

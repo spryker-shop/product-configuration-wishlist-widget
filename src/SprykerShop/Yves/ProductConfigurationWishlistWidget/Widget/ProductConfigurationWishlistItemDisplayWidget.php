@@ -31,9 +31,6 @@ class ProductConfigurationWishlistItemDisplayWidget extends AbstractWidget
      */
     protected const PARAMETER_PRODUCT_CONFIGURATION_TEMPLATE = 'productConfigurationTemplate';
 
-    /**
-     * @param \Generated\Shared\Transfer\WishlistItemTransfer $wishlistItemTransfer
-     */
     public function __construct(WishlistItemTransfer $wishlistItemTransfer)
     {
         $this->addIsVisibleParameter($wishlistItemTransfer);
@@ -46,47 +43,26 @@ class ProductConfigurationWishlistItemDisplayWidget extends AbstractWidget
         $this->addProductConfigurationTemplateParameter($wishlistItemTransfer);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductConfigurationWishlistItemDisplayWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductConfigurationWishlistWidget/views/wishlist-item-configuration/wishlist-item-configuration.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\WishlistItemTransfer $wishlistItemTransfer
-     *
-     * @return void
-     */
     protected function addIsVisibleParameter(WishlistItemTransfer $wishlistItemTransfer): void
     {
         $this->addParameter(static::PARAMETER_IS_VISIBLE, $wishlistItemTransfer->getProductConfigurationInstance() !== null);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\WishlistItemTransfer $wishlistItemTransfer
-     *
-     * @return void
-     */
     protected function addProductConfigurationInstanceParameter(WishlistItemTransfer $wishlistItemTransfer): void
     {
         $this->addParameter(static::PARAMETER_PRODUCT_CONFIGURATION_INSTANCE, $wishlistItemTransfer->getProductConfigurationInstanceOrFail());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\WishlistItemTransfer $wishlistItemTransfer
-     *
-     * @return void
-     */
     protected function addProductConfigurationTemplateParameter(WishlistItemTransfer $wishlistItemTransfer): void
     {
         $productConfigurationTemplateTransfer = $this->getFactory()

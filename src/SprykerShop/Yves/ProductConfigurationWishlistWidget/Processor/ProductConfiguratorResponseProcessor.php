@@ -38,10 +38,6 @@ class ProductConfiguratorResponseProcessor implements ProductConfiguratorRespons
      */
     protected $router;
 
-    /**
-     * @param \SprykerShop\Yves\ProductConfigurationWishlistWidget\Dependency\Client\ProductConfigurationWishlistWidgetToProductConfigurationWishlistClientInterface $productConfigurationWishlistClient
-     * @param \Symfony\Cmf\Component\Routing\ChainRouterInterface $router
-     */
     public function __construct(
         ProductConfigurationWishlistWidgetToProductConfigurationWishlistClientInterface $productConfigurationWishlistClient,
         ChainRouterInterface $router

@@ -57,9 +57,6 @@ class WishlistPageProductConfiguratorRequestDataFormExpander implements Wishlist
      */
     protected $productConfigurationWishlistWidgetConfig;
 
-    /**
-     * @param \SprykerShop\Yves\ProductConfigurationWishlistWidget\ProductConfigurationWishlistWidgetConfig $productConfigurationWishlistWidgetConfig
-     */
     public function __construct(ProductConfigurationWishlistWidgetConfig $productConfigurationWishlistWidgetConfig)
     {
         $this->productConfigurationWishlistWidgetConfig = $productConfigurationWishlistWidgetConfig;

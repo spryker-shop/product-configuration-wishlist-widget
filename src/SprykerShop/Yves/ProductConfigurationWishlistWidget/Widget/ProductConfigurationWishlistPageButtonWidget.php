@@ -31,9 +31,6 @@ class ProductConfigurationWishlistPageButtonWidget extends AbstractWidget
      */
     protected const PARAMETER_PRODUCT_CONFIGURATOR_ROUTE_NAME = 'productConfiguratorRouteName';
 
-    /**
-     * @param \Generated\Shared\Transfer\WishlistItemTransfer $wishlistItemTransfer
-     */
     public function __construct(WishlistItemTransfer $wishlistItemTransfer)
     {
         $this->addIsVisibleParameter($wishlistItemTransfer);
@@ -46,37 +43,21 @@ class ProductConfigurationWishlistPageButtonWidget extends AbstractWidget
         $this->addProductConfigurationRouteNameParameter();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductConfigurationWishlistPageButtonWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductConfigurationWishlistWidget/views/wishlist-item-configuration-button/wishlist-item-configuration-button.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\WishlistItemTransfer $wishlistItemTransfer
-     *
-     * @return void
-     */
     protected function addIsVisibleParameter(WishlistItemTransfer $wishlistItemTransfer): void
     {
         $this->addParameter(static::PARAMETER_IS_VISIBLE, $wishlistItemTransfer->getProductConfigurationInstance() !== null);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\WishlistItemTransfer $wishlistItemTransfer
-     *
-     * @return void
-     */
     protected function addFormParameter(WishlistItemTransfer $wishlistItemTransfer): void
     {
         $productConfiguratorButtonFormCartPageDataProvider = $this->getFactory()
@@ -90,9 +71,6 @@ class ProductConfigurationWishlistPageButtonWidget extends AbstractWidget
         $this->addParameter(static::PARAMETER_FORM, $productConfigurationButtonForm);
     }
 
-    /**
-     * @return void
-     */
     protected function addProductConfigurationRouteNameParameter(): void
     {
         $this->addParameter(

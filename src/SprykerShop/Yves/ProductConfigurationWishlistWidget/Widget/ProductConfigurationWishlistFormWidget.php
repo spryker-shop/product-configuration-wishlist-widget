@@ -20,35 +20,21 @@ class ProductConfigurationWishlistFormWidget extends AbstractWidget
      */
     protected const PARAMETER_HAS_PRODUCT_CONFIGURATION_ATTACHED = 'hasProductConfigurationAttached';
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     */
     public function __construct(ProductViewTransfer $productViewTransfer)
     {
         $this->addHasProductConfigurationAttachedParameter($productViewTransfer);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductConfigurationWishlistFormWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductConfigurationWishlistWidget/views/product-configuration-wishlist-form-widget/product-configuration-wishlist-form-widget.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return void
-     */
     protected function addHasProductConfigurationAttachedParameter(ProductViewTransfer $productViewTransfer): void
     {
         $this->addParameter(

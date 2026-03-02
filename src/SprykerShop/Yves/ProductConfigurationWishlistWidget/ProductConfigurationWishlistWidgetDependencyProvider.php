@@ -33,11 +33,6 @@ class ProductConfigurationWishlistWidgetDependencyProvider extends AbstractBundl
      */
     public const PLUGINS_WISHLIST_ITEM_PRODUCT_CONFIGURATION_RENDER_STRATEGY = 'PLUGINS_WISHLIST_ITEM_PRODUCT_CONFIGURATION_RENDER_STRATEGY';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -49,11 +44,6 @@ class ProductConfigurationWishlistWidgetDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addProductConfigurationWishlistClient(Container $container): Container
     {
         $container->set(static::CLIENT_PRODUCT_CONFIGURATION_WISHLIST, function (Container $container) {
@@ -65,11 +55,6 @@ class ProductConfigurationWishlistWidgetDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addRouter(Container $container): Container
     {
         $container->set(static::SERVICE_ROUTER, function (Container $container) {
@@ -79,11 +64,6 @@ class ProductConfigurationWishlistWidgetDependencyProvider extends AbstractBundl
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addWishlistItemProductConfigurationRenderStrategyPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_WISHLIST_ITEM_PRODUCT_CONFIGURATION_RENDER_STRATEGY, function () {

@@ -23,11 +23,6 @@ interface ProductConfigurationWishlistWidgetToProductConfigurationWishlistClient
      */
     public function expandWithProductConfiguration(WishlistItemTransfer $wishlistItemTransfer, array $params): WishlistItemTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConfiguratorRequestTransfer $productConfiguratorRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfiguratorRedirectTransfer
-     */
     public function resolveProductConfiguratorAccessTokenRedirect(
         ProductConfiguratorRequestTransfer $productConfiguratorRequestTransfer
     ): ProductConfiguratorRedirectTransfer;

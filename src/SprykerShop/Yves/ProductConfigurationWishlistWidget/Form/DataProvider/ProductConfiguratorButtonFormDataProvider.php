@@ -18,19 +18,11 @@ class ProductConfiguratorButtonFormDataProvider
      */
     protected $productConfigurationWishlistWidgetConfig;
 
-    /**
-     * @param \SprykerShop\Yves\ProductConfigurationWishlistWidget\ProductConfigurationWishlistWidgetConfig $productConfigurationWishlistWidgetConfig
-     */
     public function __construct(ProductConfigurationWishlistWidgetConfig $productConfigurationWishlistWidgetConfig)
     {
         $this->productConfigurationWishlistWidgetConfig = $productConfigurationWishlistWidgetConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\WishlistItemTransfer $wishlistItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConfiguratorRequestDataTransfer
-     */
     public function getData(WishlistItemTransfer $wishlistItemTransfer): ProductConfiguratorRequestDataTransfer
     {
         return (new ProductConfiguratorRequestDataTransfer())
